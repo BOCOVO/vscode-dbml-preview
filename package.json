@@ -14,12 +14,39 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "dbml",
+        "aliases": [
+          "Database Markup Language",
+          "DBML",
+          "dbml"
+        ],
+        "extensions": [
+          "dbml"
+        ]
+      }
+    ],
     "commands": [
       {
-        "command": "dbml-preview.helloWorld",
-        "title": "Hello World"
+        "command": "dbml-preview.openPreview",
+        "title": "Open Database Schema Preview",
+        "category": "DBML",
+        "icon": {
+          "light": "./assets/preview-light.png",
+          "dark": "./assets/preview-dark.png"
+        }
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "dbml-preview.openPreview",
+          "when": "editorLangId == dbml",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
