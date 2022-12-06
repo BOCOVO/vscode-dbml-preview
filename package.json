@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:dbml-preview.helloWorld"
+    "onLanguage:dbml"
   ],
   "main": "./dist/extension.js",
   "contributes": {
